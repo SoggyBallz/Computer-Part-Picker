@@ -1,4 +1,4 @@
-#Computer Part Picker
+Computer Part Picker
 Sistemas funkcionalitate
 Ir vairaki logi, kuros var izveleties datora komponentes, lai sakomplektetu stacionaro datoru.
 Gadījumā, ja detaļas nav fiziski savienojamas vai ir kāda cita problema, tiek brīdināts lietotājs.
