@@ -1,6 +1,4 @@
-<!DOCTYPE html>
 <html>
-
 <head>
   <title>Computer Part Picker</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
@@ -59,5 +57,4 @@
     <p>Copyright &copy; 2023 Computer Part Picker</p>
   </footer>
 </body>
-
 </html>

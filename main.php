@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Computer Part Picker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#parts">Parts</a></li>
+        <li><a href="#builds">Builds</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h1>Welcome to Computer Part Picker</h1>
+      <p>We help you find the best parts for your custom computer build.</p>
+      <p>Check out our <a href="#parts">Parts</a> section to see the different components we offer or head over to our
+        <a href="#builds">Builds</a> section to see pre-made computer configurations.</p>
+    </section>
+    <section id="parts">
+      <h2>Parts</h2>
+      <ul>
+        <li><a href="#cpu">CPU</a></li>
+        <li><a href="#gpu">GPU</a></li>
+        <li><a href="#motherboard">Motherboard</a></li>
+        <li><a href="#memory">Memory</a></li>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#power-supply">Power Supply</a></li>
+      </ul>
+      <p>Explore the different components to find the best fit for your custom computer build. Don't forget to check out
+        our <a href="#builds">Builds</a> section to see pre-made configurations for inspiration!</p>
+    </section>
+    <section id="builds">
+      <h2>Builds</h2>
+      <ul>
+        <li><a href="#budget">Budget Build</a></li>
+        <li><a href="#mid-range">Mid-Range Build</a></li>
+        <li><a href="#high-end">High-End Build</a></li>
+      </ul>
+      <p>Choose a pre-made configuration or use our parts section to find the perfect components for your custom build.
+      </p>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>At Computer Part Picker, we're passionate about custom computer building and helping others find the perfect
+        parts for their builds. Whether you're a beginner or a seasoned pro, we're here to help.</p>
+      <p>Got questions or need advice? Reach out to us via the contact information listed in the <a
+          href="#home">home</a> section.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2023 Computer Part Picker</p>
+  </footer>
+</body>
+</html>
