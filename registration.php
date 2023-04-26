@@ -1,12 +1,17 @@
 <?php
-include("config.php");
+$db = mysqli_connect('localhost','girts','','pc_part_picker');
+if(!$db)
+{
+  echo 'Connection error: '. mysqli_connect_error();
+}
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
+  $myname = mysqli_real_escape_string($db,$_POST['name']);
   $myemail = mysqli_real_escape_string($db,$_POST['email']);
   $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
-  $chk_query = "SELECT * FROM user WHERE email='$myemail'";
+  $chk_query = "SELECT * FROM users WHERE email='$myemail'";
   $chk_res = mysqli_query($db, $chk_query);
 
   if(mysqli_num_rows($chk_res) > 0){
@@ -14,11 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   }
   else
   {
-    $sql = "INSERT INTO user (email, password, admin) VALUES ('$myemail', '$mypassword', 0)";
+    $sql = "INSERT INTO users (name, email, password, admin) VALUES ('$myname', '$myemail', '$mypassword', 0)";
 
     if (mysqli_query($db, $sql))
     {
-      header("Location: main.php");
+      header("Location: components.php");
     }
     else
     {
@@ -37,6 +42,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 </head>
 <body>
 	<form action="" method="post">
+    <label for="name">Name:</label><br>
+		<input type="text" name="name" class = "box"><br>
+
 		<label for="email">Email:</label><br>
 		<input type="text" name="email" class = "box"><br>
 

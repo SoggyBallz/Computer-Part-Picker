@@ -1,6 +1,9 @@
 <?php
-include("config.php");
-session_start();
+$db = mysqli_connect('localhost','girts','','pc_part_picker');
+if(!$db)
+{
+  echo 'Connection error: '. mysqli_connect_error();
+}
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -11,12 +14,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   $result = $result->fetch_array();
   $admin = intval($result[0]);
 
-  if(!$admin)
+  if($admin = 0)
   {
     $_SESSION['login_user'] = $myemail;
-    header("location: game.php");
+    header("location: main.php");
   }
-  else if($admin)
+  else if($admin = 1)
   {
     $_SESSION['login_user'] = $myemail;
     header("location: admin.php");

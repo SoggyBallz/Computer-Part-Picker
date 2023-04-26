@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Computer Part Picker</title>
+  <title>Admin Page</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -8,10 +8,11 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#parts">Parts</a></li>
-        <li><a href="#builds">Builds</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="admin.php">Home</a></li>
+        <li><a href="adminbuild.php">Build a Computer</a></li>
+        <li><a href="components.php">Add Components</a></li>
+        <li><a href="adminprebuilds.php">Pre-Builds</a></li>
+        <li><a href="index.php">Log Out</a></li>
       </ul>
     </nav>
   </header>
