@@ -2,7 +2,7 @@ body {
   background-color: black;
   color: white;
   font-family: Arial, sans-serif;
-  background-image: url("images/background1.png");
+  background-image: url("images/Firefly background for a computer part picker store website banner poster; high quality photo 42184.png");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -240,4 +240,45 @@ h1{
   select option[value="select"] {
     color: #ccc;
   }
-  
+  /* Styles for the dropdown container */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown button */
+  .dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Style for the dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style for dropdown content links */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show the dropdown content when hovering over the dropdown button */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
