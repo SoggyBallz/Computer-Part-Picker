@@ -6,7 +6,9 @@ if(!$db)
 }
 session_start();
 
-$query = "SELECT pc.id, pc.name, cpu.name as cpu_name, gpu.name as gpu_name, psu.name as psu_name, motherboard.name as motherboard_name, ram.name as ram_name, pc_case.name as case_name, cooler.name as cooler_name FROM pc
+$query = "SELECT pc.id, pc.name, cpu.name as cpu_name, gpu.name as gpu_name, psu.name as psu_name, motherboard.name as motherboard_name, ram.name as ram_name, pc_case.name as case_name, cooler.name as cooler_name,
+                cpu.price as cpu_price, gpu.price as gpu_price, psu.price as psu_price, motherboard.price as motherboard_price, ram.price as ram_price, pc_case.price as case_price, cooler.price as cooler_price
+          FROM pc
           INNER JOIN cpu ON pc.cpu_id = cpu.id
           INNER JOIN gpu ON pc.gpu_id = gpu.id
           INNER JOIN psu ON pc.psu_id = psu.id
@@ -14,11 +16,10 @@ $query = "SELECT pc.id, pc.name, cpu.name as cpu_name, gpu.name as gpu_name, psu
           INNER JOIN ram ON pc.ram_id = ram.id
           INNER JOIN pc_case ON pc.case_id = pc_case.id
           INNER JOIN cooler ON pc.cooler_id = cooler.id
-          WHERE pre_build = 1";
+          WHERE pre_build=1";
 $result = mysqli_query($db, $query);
 $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +59,7 @@ $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
       <th>RAM</th>
       <th>Case</th>
       <th>Cooler</th>
+      <th>Total Price</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -72,7 +74,13 @@ $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <td><?php echo $row['ram_name']; ?></td>
         <td><?php echo $row['case_name']; ?></td>
         <td><?php echo $row['cooler_name']; ?></td>
-        <td><a href="buy_build.php?id=<?php echo $row['id']; ?>">Buy</a></td>
+        <?php
+        $totalPrice = $row['cpu_price'] + $row['gpu_price'] + $row['psu_price'] +
+        $row['motherboard_price'] + $row['ram_price'] + $row['case_price'] +
+        $row['cooler_price'];
+        ?>
+        <td><?php echo number_format($totalPrice, 2); ?></td>
+        <td><a href="buy_build.php?id=<?php echo $row['id']; ?>">Add To Cart</a></td>
       </tr>
     <?php endforeach; ?>
   </tbody>

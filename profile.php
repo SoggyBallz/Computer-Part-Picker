@@ -18,6 +18,14 @@ if ($newPassword == $newPassword1) {
 else {
     $error = "Passwords does't match";
 }
+if (isset($_POST['delete_profile'])) {
+  // Perform actions to delete the profile
+  // You may want to add additional confirmation steps or validation
+  $delete_sql = "DELETE FROM users WHERE email = '$myemail'";
+  mysqli_query($db, $delete_sql);
+  header("Location: index.php"); // Redirect to the homepage or a login page after deletion
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +33,15 @@ else {
 <head>
     <title>Your Profile</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script>
+        function confirmDelete() {
+            var confirmDelete = confirm("Are you sure you want to delete your profile?");
+            if (confirmDelete) {
+                // If the user confirms, submit the form with the delete_profile action
+                document.getElementById('deleteForm').submit();
+            }
+        }
+    </script>
 </head>
 <header>
     <nav>
@@ -65,6 +82,11 @@ else {
 
         <input type="submit" value="Change Password">
         <div style = "font-size:14px; color:#cc0000; margin-top:10px"><?php if (isset($error)){echo $error;}; ?></div>
+    </form>
+    <h2>Delete Profile</h2>
+    <form id="deleteForm" method="post">
+        <input type="hidden" name="delete_profile" value="true">
+        <button type="button" onclick="confirmDelete()">Delete Profile</button>
     </form>
 </body>
 </html>
