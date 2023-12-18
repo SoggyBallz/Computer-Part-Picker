@@ -2,7 +2,7 @@ body {
   background-color: black;
   color: white;
   font-family: Arial, sans-serif;
-  background-image: url("images/Firefly background for a computer part picker store website banner poster; high quality photo 42184.png");
+  background-image: url("images/Background1.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
@@ -248,7 +248,7 @@ h1{
 
   /* Style for the dropdown button */
   .dropbtn {
-    background-color: #3498DB;
+    background-color: #db3447;
     color: white;
     padding: 10px;
     border: none;
@@ -260,9 +260,10 @@ h1{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    max-width: 75px;
   }
 
   /* Style for dropdown content links */
