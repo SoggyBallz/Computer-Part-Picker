@@ -1,0 +1,5 @@
+Lietotājam būs iespēja izveidot kontu vai ielagoties jau izveidotā kontā. Lietotājs var izveidot sev patīkamu datoru, un pievienot to grozam ko vēlāk varēs iegādāties. 
+Lietotājam ir iespēja mainīt sava konta invormāciju.
+
+Adminam ir iespēja ielagoties savā kontā, veikt izmaiņas savam vai cietiem kontiem. 
+Adminam ir iespēja pievienot jaunas deteļas un izveidot datorus priekš lietotājiem kuri nav pārliecināti kā pareizi izveidot datoru.
